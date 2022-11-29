@@ -5,9 +5,14 @@ Anagha Chandrasekharan, Randal Macias, Caden Thun, Vincent Por
 # Project Description
 In this project, we are looking to discover if there is a correlation between various crime scene tags (crime committed/crime code, victim age, description, rpt dist no, and date)  and whether a machine learning model can predict the victim’s sex, based on open data from the city of Los Angeles. 
 # Package Requirements
-We used packages including: numpy, sklearn, pandas, and matplotlib. 
+We used the following packages:
+* numpy
+* sklearn
+* pandas
+* matplotlib
 # Detailed Description of DEMO
 edit this
+# Conclusion
 # Scope Limitations (ethical implications, accessibility concerns, ideas for potential extensions)
 # References and Acknowledgements
 # Background/Source of Dataset
