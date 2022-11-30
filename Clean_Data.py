@@ -1,4 +1,5 @@
 import pandas as pd
+import datetime
 from sklearn import preprocessing
 
 class data_cleaner:
@@ -38,16 +39,13 @@ class data_cleaner:
         if len(oldName)==len(newName):
             for i in range(len(oldName)):
                 self.df.rename(columns={oldName[i]: newName[i]}, inplace=True)
-            return self
         else:
             raise ValueError("Make sure there are the same number of new and old column names.")
             
-            
-            
-            
-        #for i in range(len(oldName)):
-            #self.df = self.df.rename(columns={oldName[i]: newName[i]})
-            
+    def onlyDate(self, date_name):
+        self.df[date_name] = pd.to_datetime(self.df[date_name])
+
+         
     def delNa(self):
         '''
         delete NA values
@@ -58,18 +56,22 @@ class data_cleaner:
         #once change name works fix the variable name here
         self.df = self.df[self.df["Sex"] != "X"]
         self.df = self.df[self.df["Sex"] != "H"]
-        
-    def sexToNum(self):
-        
+        self.df = self.df[self.df["Descent"] != "X"]
+    
+    def toNum(self):
         if any(self.df["Sex"] == "X"):
             raise TypeError("There are victim's with unknown sex in this dataset.")
         if any(self.df["Sex"] == "H"):
             raise TypeError("There are victim's with unknown sex in this dataset.")
+        if any(self.df["Descent"] == "X"):
+            raise TypeError("There are victim's with unknown descent in this dataset.")
         else:
             le = preprocessing.LabelEncoder()
             self.df['Sex'] = le.fit_transform(self.df['Sex'])
+            self.df['Descent'] = le.fit_transform(self.df['Descent'])
             #change male values that are greater than 0 to 1. 
             #data[data["Vict Sex"] > 0] = 1 this is wrong
+   
             
     #accessor methods
     def showShape(self):
@@ -78,26 +80,14 @@ class data_cleaner:
     def value_counts(self):
         return self.df.value_counts()
     
+    def showHead(self):
+        print(self.df.head)
+        
+    def drop(self, column):
+        self.df.drop([column], axis = 1)
+        
+    def column(self, column_name): #properly returns a panda series.
+        return self.df[column_name]
     
-    def unique(self, column):
-        '''
-        drop the duplicates in a given column
-        Args:
-            column: a string.
-        Return:
-            None.
-        '''
-        self.df = self.df.drop_duplicates(subset = [column])
-
-    def merge(self, other):
-        '''
-        merge two Cleaner instances and return a dataframe
-        Args:
-            other: a Cleaner instance
-        Return:
-            A dataframe merged by the dataframes of self and other
-        '''
-        if not (self.df["Player"].is_unique and other.df["Player"].is_unique):
-            raise ValueError("The Player column is not unique")
-        else:
-            return pd.merge(self.df, other.df, on = "Player")
+    def createDF(self):
+        return pd.DataFrame(data = self.df)
