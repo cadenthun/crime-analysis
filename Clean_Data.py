@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn import preprocessing
 
 class data_cleaner:
     '''
@@ -36,12 +37,28 @@ class data_cleaner:
         '''
         for i in range(len(oldName)):
             self.df = self.df.rename(columns={oldName[i]: newName[i]})
+            
+    def delNa(self):
+        '''
+        delete NA values
+        '''
+        self.df = self.df.dropna()
         
     def delRows(self):
-        print(data.shape)
-        self.df = self.df.loc[self.df["Sex"] != "X"]
-        print(data.shape)
+        #once change name works fix the variable name here
+        self.df = self.df[self.df["Vict Sex"] != "X"]
         
+    def sexToNum(self):
+        
+        if any(self.df["Vict Sex"] == "X"):
+            raise TypeError("There are victim's with unknown sex in this dataset.")
+        else:
+            le = preprocessing.LabelEncoder()
+            self.df['Vict Sex'] = le.fit_transform(self.df['Vict Sex'])
+            #change male values that are greater than 0 to 1. 
+            #data[data["Vict Sex"] > 0] = 1 this is wrong
+        
+        #lesson 19
         
     def unique(self, column):
         '''
