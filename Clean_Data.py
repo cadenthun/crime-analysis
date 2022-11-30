@@ -35,8 +35,18 @@ class data_cleaner:
         Return:
             None.
         '''
-        for i in range(len(oldName)):
-            self.df = self.df.rename(columns={oldName[i]: newName[i]})
+        if len(oldName)==len(newName):
+            for i in range(len(oldName)):
+                self.df.rename(columns={oldName[i]: newName[i]}, inplace=True)
+            return self
+        else:
+            raise ValueError("Make sure there are the same number of new and old column names.")
+            
+            
+            
+            
+        #for i in range(len(oldName)):
+            #self.df = self.df.rename(columns={oldName[i]: newName[i]})
             
     def delNa(self):
         '''
@@ -46,20 +56,29 @@ class data_cleaner:
         
     def delRows(self):
         #once change name works fix the variable name here
-        self.df = self.df[self.df["Vict Sex"] != "X"]
+        self.df = self.df[self.df["Sex"] != "X"]
+        self.df = self.df[self.df["Sex"] != "H"]
         
     def sexToNum(self):
         
-        if any(self.df["Vict Sex"] == "X"):
+        if any(self.df["Sex"] == "X"):
+            raise TypeError("There are victim's with unknown sex in this dataset.")
+        if any(self.df["Sex"] == "H"):
             raise TypeError("There are victim's with unknown sex in this dataset.")
         else:
             le = preprocessing.LabelEncoder()
-            self.df['Vict Sex'] = le.fit_transform(self.df['Vict Sex'])
+            self.df['Sex'] = le.fit_transform(self.df['Sex'])
             #change male values that are greater than 0 to 1. 
             #data[data["Vict Sex"] > 0] = 1 this is wrong
+            
+    #accessor methods
+    def showShape(self):
+        return self.df.shape
         
-        #lesson 19
-        
+    def value_counts(self):
+        return self.df.value_counts()
+    
+    
     def unique(self, column):
         '''
         drop the duplicates in a given column
