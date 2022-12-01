@@ -12,7 +12,7 @@ We used the following packages:
 * matplotlib (3.5.1)
 # Detailed Description of DEMO
 1. Imported various packages such as numpy, sklearn, pandas, and matplotlib.
-2. Tested 
+2. Used pyplot from matplotlib to graph a comparison between machine learning scores on user-defined test data and train data to find an optimal max depth.
 <img width="732" alt="Screenshot 2022-12-01 at 11 23 36 AM" src="https://user-images.githubusercontent.com/103856649/205141515-c51ad475-266b-4eca-b142-6eff845eb7f9.png">
 
 # Conclusion
