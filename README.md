@@ -11,9 +11,6 @@ We used the following packages:
 * pandas (1.4.2) 
 * matplotlib (3.5.1)
 # Detailed Description of DEMO
-1. We imported packages: numpy and pandas as well as our custom class clean_data from Clean_Data.py.
-2. Imported our dataset and used class clean_data to eliminate columns we did not need for our project.
-3. Changed the names of existing columns to simpler names for future reference by replacing a list of old names with new names.
 # Conclusion
 # Scope Limitations (ethical implications, accessibility concerns, ideas for potential extensions)
 # References and Acknowledgements
