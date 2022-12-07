@@ -11,10 +11,12 @@ We used the following packages:
 * pandas (1.4.2) 
 * matplotlib (3.5.1)
 # Detailed Description of DEMO
-1. Imported various packages such as numpy, sklearn, pandas, and matplotlib.
-2. Used pyplot from matplotlib to graph a comparison between machine learning scores on user-defined test data and train data to find an optimal max depth.
-<img width="732" alt="Screenshot 2022-12-01 at 11 23 36 AM" src="https://user-images.githubusercontent.com/103856649/205141515-c51ad475-266b-4eca-b142-6eff845eb7f9.png">
-
+1. Import various packages such as numpy, sklearn, pandas, and matplotlib.
+2. Clean dataset using the data_cleaner class from CleanData.py.
+3. Use matplotlib to illustrate coorelations between different data variables/crime scene tags and sex. ![image](https://user-images.githubusercontent.com/103856649/206104260-f04b8924-55fe-4bac-971b-bfbdf43a717f.png)
+4. Split the data into a training set and a test set to train our machine on the dataset.
+5. Use pyplot from matplotlib to graph a comparison between test data and train data to find a best-fit. ![image](https://user-images.githubusercontent.com/103856649/206104412-319efcce-3840-470a-9098-2c03b1e027ba.png)
+6. Cross-validate data to improve the machine learning model.
 # Conclusion
 # Scope Limitations (ethical implications, accessibility concerns, ideas for potential extensions)
 # References and Acknowledgements
