@@ -28,6 +28,8 @@ Predicting victim sex based off of the crime scene tags our model considered is 
 * Accessibility concerns: Using our model requires an elementary understanding of Python and scikit-learn, which many people have not had the opportunity to develop.
 * Ideas for potential extensions: Instead of predicting sex, we could adapt our model to predict various other crime-scene tags using the same dataset. Additionally, we could try applying our model to datasets from cities other than Los Angeles.
 # References and Acknowledgements
+* https://github.com/joanneqiu07/NBA-Salary-Prediction
+* Harlin Lee's PIC 16A lectures at UCLA, Fall Quarter 2022
 # Background/Source of Dataset
 Crime data from the City of Los Angeles (2020 - Present): 
 
