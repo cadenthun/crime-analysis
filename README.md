@@ -13,6 +13,8 @@ We used the following packages:
 # Detailed Description of DEMO
 1. Import various packages such as numpy, sklearn, pandas, and matplotlib.
 2. Clean dataset using the data_cleaner class from CleanData.py.
+* Utilize the member function keepColumns() to determine the information from the data set that is kept.
+* Utilize the other member functions to modify the data for ease of readability and computation.
 3. Use matplotlib to illustrate coorelations between different data variables/crime scene tags and sex. ![image](https://user-images.githubusercontent.com/103856649/206104260-f04b8924-55fe-4bac-971b-bfbdf43a717f.png)
 4. Split the data into a training set and a test set to train our machine on the dataset.
 5. Use pyplot from matplotlib to graph a comparison between test data and train data to find a best-fit. ![image](https://user-images.githubusercontent.com/103856649/206104412-319efcce-3840-470a-9098-2c03b1e027ba.png)
