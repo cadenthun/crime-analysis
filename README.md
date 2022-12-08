@@ -22,5 +22,7 @@ We used the following packages:
 # References and Acknowledgements
 # Background/Source of Dataset
 Crime data from the City of Los Angeles (2020 - Present): 
+
 This dataset contains an exhaustive list with details and information pertaining to incidents of crime in Los Angeles from 2020 and is regularly updated. This data consolidates information from the paper reports originating from the departments that responded to the incidents in question. Note that some of the parameters of the data may be redacted, not recorded, or otherwise missing. 
+
 You may access the entire database at the following link: https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8
