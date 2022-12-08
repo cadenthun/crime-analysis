@@ -19,8 +19,14 @@ We used the following packages:
 4. Split the data into a training set and a test set to train our machine on the dataset.
 5. Use pyplot from matplotlib to graph a comparison between test data and train data to find a best-fit. ![image](https://user-images.githubusercontent.com/103856649/206104412-319efcce-3840-470a-9098-2c03b1e027ba.png)
 6. Cross-validate data to improve the machine learning model.
+<img width="788" alt="Screen Shot 2022-12-08 at 3 05 51 PM" src="https://user-images.githubusercontent.com/43144162/206585804-81cd26e5-e882-40e2-9cb1-17580d391570.png">
+
 # Conclusion
+Predicting victim sex based off of the crime scene tags our model considered is a difficult task. Athough our model was able to achieve ~63% accuracy, which is undoubtedly an improvement over the 50% accuracy yielded by a random guess, we would have liked our model to have been a bit more predictive. It is possible that fitting a decision tree was not the optimal approach, though we had to test it out in order to realize that might be the case.  
 # Scope Limitations (ethical implications, accessibility concerns, ideas for potential extensions)
+* Ethical Implications: It is possible that if a victim's sex is missing from the dataset, the victim did not want to have their sex revealed. Determining sex without the victim's consent in such a case could potentially be problematic.
+* Accessibility concerns: Using our model requires an elementary understanding of Python and scikit-learn, which many people have not had the opportunity to develop.
+* Ideas for potential extensions: Instead of predicting sex, we could adapt our model to predict various other crime-scene tags using the same dataset. Additionally, we could try applying our model to datasets from cities other than Los Angeles.
 # References and Acknowledgements
 # Background/Source of Dataset
 Crime data from the City of Los Angeles (2020 - Present): 
