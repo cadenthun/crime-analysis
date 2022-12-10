@@ -21,7 +21,7 @@ class data_cleaner:
         '''
         keep the given columns
         Args:
-            columns: an array of strings.
+            columns: a list of strings.
         Return:
             None.
         '''
@@ -31,8 +31,8 @@ class data_cleaner:
         '''
         change the name of given columns
         Args:
-            oldName: an array of strings of current column names.
-            newName: an array of strings of new column names.
+            oldName: a list of strings of current column names.
+            newName: a list of strings of new column names.
         Return:
             None
         '''
@@ -66,11 +66,9 @@ class data_cleaner:
         
     def delRows(self):
         '''
-        deletes rows with incomplete data. 
-        
+        deletes rows with incomplete data.
         Args:
-            None - amends data cleaner. 
-            
+            None - amends data cleaner.   
         Return:
             None. 
         '''
@@ -83,7 +81,6 @@ class data_cleaner:
         ensures that there are no unknown data types. 
         converts females and males to 0 and 1 respectively. 
         also converts descent into a number. 
-        
         Args:
             None - amends data cleaner
         Returns:
@@ -105,12 +102,9 @@ class data_cleaner:
     def createDF(self):
         '''
         converts data cleaner into a dataframe
-        
         Args:
-            None - amends data cleaner. 
-            
+            None - amends data cleaner.    
         Return:
             None. 
         '''
-        
         return pd.DataFrame(data = self.df)
